@@ -1,7 +1,22 @@
 {
-  "name": "@fzed51/<package-name>",
-  "description": "<package-description>",
-  "version": "0.0.0",
+  "name": "@fzed51/green-terminal",
+  "description": "GreenTerminal UI est une collection de composants React stylisés avec un thème sombre et vert néon, idéale pour les interfaces techniques, les dashboards futuristes ou les projets nécessitant une ambiance 'hacker' élégante.",
+  "keywords": [
+    "react",
+    "ui",
+    "component",
+    "dark-theme",
+    "terminal-ui",
+    "retro-ui",
+    "hack-theme",
+    "green-terminal"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fzed51/green-terminal"
+  },
+  "version": "0.1.0",
+  "license": "MIT",
   "type": "module",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
