@@ -52,8 +52,10 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.5",
+    "@types/copyfiles": "^2",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "copyfiles": "^2",
     "react": "^19",
     "react-dom": "^19",
     "typescript": "~5.9.3"
