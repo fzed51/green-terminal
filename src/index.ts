@@ -1,14 +1,33 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   @fzed51/green-terminal — point d'entrée
+   ---------------------------------------------------------------------------
+   green-terminal est désormais un THÈME « dark hack green » par-dessus
+   @fzed51/react-component :
+   - <BaseStyle /> injecte le socle react-component + les tokens + la cosmétique ;
+   - les composants communs sont ré-exportés depuis react-component (re-skinnés) ;
+   - les composants signatures du thème restent fournis en propre.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+export type { TableColumn, TableProps, TableSize } from "@fzed51/react-component";
+
+/* ── Composants ré-exportés depuis react-component (re-skinnés) ──────────── */
+export {
+  Badge,
+  Button,
+  Card,
+  Divider as Separator,
+  // Alias pour conserver la nomenclature green-terminal
+  InputText as Input,
+  InputTextarea as Textarea,
+  Selector as Select,
+  Table,
+} from "@fzed51/react-component";
+/* ── Composants signatures green-terminal (absents de react-component) ───── */
 export { Alert } from "./Alert";
 export { AppShell } from "./AppShell";
-export { Badge } from "./Badge";
-export { Button } from "./Button";
+/* ── Thème ─────────────────────────────────────────────────────────────── */
+export { BaseStyle } from "./BaseStyle";
 export { ButtonGroup } from "./ButtonGroup";
-export { Card } from "./Card";
 export { EmptyState } from "./EmptyState";
-export { Input } from "./Input";
 export { PageHeader } from "./PageHeader";
-export { Select } from "./Select";
-export { Separator } from "./Separator";
-export { Table, TableBody, TableCell, TableHead, TableRow } from "./Table";
 export { Terminal, TerminalLine } from "./Terminal";
-export { Textarea } from "./Textarea";

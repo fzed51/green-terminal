@@ -4,6 +4,8 @@
     "module": "CommonJS",
     "moduleResolution": "node",
     "outDir": "./dist/cjs",
-    "verbatimModuleSyntax": false
+    "verbatimModuleSyntax": false,
+    "noEmit": false,
+    "allowImportingTsExtensions": false
   }
 }
