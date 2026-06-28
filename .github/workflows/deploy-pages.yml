@@ -47,6 +47,9 @@ jobs:
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
+        with:
+          # Active automatiquement Pages en mode Actions si ce n'est pas déjà fait
+          enablement: true
 
       - name: Upload de l'artefact
         uses: actions/upload-pages-artifact@v3
