@@ -482,11 +482,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource/ibm-plex-mono@npm:^5.2.7":
+  version: 5.2.7
+  resolution: "@fontsource/ibm-plex-mono@npm:5.2.7"
+  checksum: 10/dc340d12e7fb87d3fd8954363d22a0ce5b3f4a215c80c534ea4b5d55a76b3f2c203fc673197ce7059f99b7a15d726c16a131540b765d1ff42c6ae9a106c506d4
+  languageName: node
+  linkType: hard
+
 "@fzed51/green-terminal@workspace:.":
   version: 0.0.0-use.local
   resolution: "@fzed51/green-terminal@workspace:."
   dependencies:
     "@biomejs/biome": "npm:2.4.5"
+    "@fontsource/ibm-plex-mono": "npm:^5.2.7"
     "@fzed51/react-component": "npm:^1.2.1"
     "@types/copyfiles": "npm:^2"
     "@types/react": "npm:^19"

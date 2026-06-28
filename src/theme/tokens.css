@@ -65,8 +65,8 @@
 
   /* Typographie monospace */
   --font-family-base:
-    "Fira Code", "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", "Source Code Pro",
-    "Courier New", monospace;
+    "IBM Plex Mono", "Fira Code", "SF Mono", "Monaco", "Inconsolata", "Roboto Mono",
+    "Source Code Pro", "Courier New", monospace;
 
   /* Coins anguleux */
   --radius-none: 0;
