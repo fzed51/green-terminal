@@ -8,20 +8,13 @@
    - les composants signatures du thème restent fournis en propre.
    ═══════════════════════════════════════════════════════════════════════════ */
 
-export type { TableColumn, TableProps, TableSize } from "@fzed51/react-component";
-
-/* ── Composants ré-exportés depuis react-component (re-skinnés) ──────────── */
-export {
-  Badge,
-  Button,
-  Card,
-  Divider as Separator,
-  // Alias pour conserver la nomenclature green-terminal
-  InputText as Input,
-  InputTextarea as Textarea,
-  Selector as Select,
-  Table,
-} from "@fzed51/react-component";
+/* ── Façade complète sur react-component (re-skinné par le thème CSS) ──────
+   Toute la surface publique de react-component est ré-exposée sous ses noms
+   d'origine : le développeur n'importe QUE depuis green-terminal, jamais
+   depuis react-component. Seul BaseStyle est volontairement non ré-exporté
+   ici : l'export nommé local ci-dessous (notre BaseStyle thémé) masque celui
+   de react-component dans cette ré-export étoile. */
+export * from "@fzed51/react-component";
 /* ── Composants signatures green-terminal (absents de react-component) ───── */
 export { Alert } from "./Alert";
 export { AppShell } from "./AppShell";
