@@ -54,14 +54,14 @@
   },
   "dependencies": {
     "@fontsource/ibm-plex-mono": "^5.2.7",
-    "@fzed51/react-component": "^1.2.1"
+    "@fzed51/react-component": "^1.2.2"
   },
   "peerDependencies": {
     "react": ">=19",
     "react-dom": ">=19"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.5",
+    "@biomejs/biome": "2.5.1",
     "@types/copyfiles": "^2",
     "@types/react": "^19",
     "@types/react-dom": "^19",
