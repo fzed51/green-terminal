@@ -2,6 +2,8 @@
 
 React · TypeScript · License: MIT
 
+🌐 **[Démo en ligne / playground](https://fzed51.github.io/green-terminal/)** — vitrine interactive des composants thémés.
+
 **GreenTerminal UI** est un thème *"dark hack green"* pour [`@fzed51/react-component`](https://github.com/fzed51/react-component), inspiré des interfaces rétro des terminaux informatiques. Parfait pour les dashboards techniques, les applications cyberpunk ou tout projet nécessitant une ambiance immersive et futuriste.
 
 Concrètement, GreenTerminal :
@@ -102,6 +104,8 @@ export function App() {
 yarn install
 yarn dev          # playground Vite (vitrine des composants thémés)
 ```
+
+> 💡 Le playground est aussi déployé en ligne : <https://fzed51.github.io/green-terminal/>
 
 ### Construire la librairie
 
