@@ -17,10 +17,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: yarn
 
       - name: Active Corepack (Yarn 4)
         run: corepack enable
+
+      - name: Cache Yarn
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: yarn
 
       - name: Installe les dépendances
         run: yarn install --immutable
