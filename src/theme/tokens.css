@@ -19,7 +19,7 @@
   /* Couleurs de base */
   --color-primary: #00ff00;
   --color-secondary: #00cc00;
-  --color-warning: #ffff00;
+  --color-warning: #ffb000;
   --color-error: #ff3333;
 
   --color-text-primary: #00ff00;
@@ -33,7 +33,7 @@
   --color-primary-light: rgba(0, 255, 0, 0.15);
   --color-secondary-hover: #33ff33;
   --color-secondary-light: rgba(0, 255, 0, 0.1);
-  --color-warning-light: rgba(255, 255, 0, 0.12);
+  --color-warning-light: rgba(255, 176, 0, 0.12);
   --color-error-light: rgba(255, 51, 51, 0.12);
   --color-success: #00ff00;
   --color-success-light: rgba(0, 255, 0, 0.12);
