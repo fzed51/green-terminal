@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BaseStyle } from "../src";
-import { Demo } from "./Demo";
+import { Showcase } from "./Showcase";
 
 const container = document.getElementById("root");
 if (!container) {
@@ -11,6 +11,6 @@ if (!container) {
 createRoot(container).render(
   <StrictMode>
     <BaseStyle />
-    <Demo />
+    <Showcase />
   </StrictMode>,
 );
