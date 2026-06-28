@@ -53,7 +53,7 @@
     "publish:pat": "yarn ver:pat && yarn git-push && yarn build && yarn _publish"
   },
   "dependencies": {
-    "@fzed51/react-component": "^1.2.0"
+    "@fzed51/react-component": "^1.2.1"
   },
   "peerDependencies": {
     "react": ">=19",

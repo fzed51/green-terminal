@@ -487,7 +487,7 @@ __metadata:
   resolution: "@fzed51/green-terminal@workspace:."
   dependencies:
     "@biomejs/biome": "npm:2.4.5"
-    "@fzed51/react-component": "npm:^1.2.0"
+    "@fzed51/react-component": "npm:^1.2.1"
     "@types/copyfiles": "npm:^2"
     "@types/react": "npm:^19"
     "@types/react-dom": "npm:^19"
@@ -503,15 +503,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@fzed51/react-component@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "@fzed51/react-component@npm:1.2.0"
+"@fzed51/react-component@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "@fzed51/react-component@npm:1.2.1"
   dependencies:
     clsx: "npm:^2.1.1"
   peerDependencies:
     react: ">=19"
     react-dom: ">=19"
-  checksum: 10/99236747709a0f189b25cb3734c3b2b269ecb58c70635abf22502b20b0d9cddbb2a4af9a5032667fb3f6ed3740f01c1dc6a8cfd25efda49d4159aeb63f7e7ee0
+  checksum: 10/86df308f736b9932a3cb4a0b89f9bda1a9aea01bd22f07b72062096f12ccb3420b8253d2eac58cee9d87a9929f8469da8f4963ec836ac3a827c1e9befbff934e
   languageName: node
   linkType: hard
 
