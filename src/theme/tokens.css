@@ -1,0 +1,99 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   GREEN TERMINAL — Couche 1 : design tokens
+   ---------------------------------------------------------------------------
+   Un seul :root qui sert DEUX publics :
+   - les tokens de react-component (--color-primary, --space-*, --radius-*…)
+     → re-skinnent les composants ré-exportés (Button, Card, Table…) ;
+   - les variables historiques de green-terminal (--color-green-*, --color-bg-*…)
+     → consommées par les composants maison conservés (Terminal, AppShell…).
+   Les noms communs (--color-text-primary, --color-border…) reçoivent les
+   valeurs « hacker », donc les deux familles restent cohérentes.
+   À charger APRÈS le base.css de react-component.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ─────────────────────────────────────────────────────────────────────────
+     TOKENS REACT-COMPONENT (remap hacker green)
+     ───────────────────────────────────────────────────────────────────────── */
+
+  /* Couleurs de base */
+  --color-primary: #00ff00;
+  --color-secondary: #00cc00;
+  --color-warning: #ffb000;
+  --color-error: #ff3333;
+
+  --color-text-primary: #00ff00;
+  --color-text-inverse: #0a0a0a; /* posé sur le primary → fond foncé */
+
+  --color-bg-surface: #0a140a;
+  --color-bg-app: #0a0a0a;
+
+  /* Dérivées réorientées vers le sombre */
+  --color-primary-hover: #33ff33;
+  --color-primary-light: rgba(0, 255, 0, 0.15);
+  --color-secondary-hover: #33ff33;
+  --color-secondary-light: rgba(0, 255, 0, 0.1);
+  --color-warning-light: rgba(255, 176, 0, 0.12);
+  --color-error-light: rgba(255, 51, 51, 0.12);
+  --color-success: #00ff00;
+  --color-success-light: rgba(0, 255, 0, 0.12);
+  --color-info: #33ccff;
+  --color-info-light: rgba(51, 204, 255, 0.12);
+
+  /* Texte */
+  --color-text-secondary: #00cc00;
+  --color-text-tertiary: #008800;
+  --color-text-disabled: #006600;
+  --color-text-link: #33ff33;
+
+  /* Surfaces / fonds */
+  --color-bg-subtle: #0d1a0d;
+  --color-bg-muted: #121f12;
+  --color-bg-dark: #000000;
+
+  /* Bordures */
+  --color-border: rgba(0, 255, 0, 0.25);
+  --color-border-strong: rgba(0, 255, 0, 0.5);
+  --color-border-focus: #33ff33;
+
+  /* Ombres neutralisées (le glow vient de overrides.css) */
+  --shadow-xs: none;
+  --shadow-sm: none;
+  --shadow-md: 0 0 12px rgba(0, 255, 0, 0.08);
+  --shadow-lg: 0 0 20px rgba(0, 255, 0, 0.12);
+  --shadow-xl: 0 0 32px rgba(0, 255, 0, 0.15);
+
+  /* Typographie monospace */
+  --font-family-base:
+    "IBM Plex Mono", "Fira Code", "SF Mono", "Monaco", "Inconsolata", "Roboto Mono",
+    "Source Code Pro", "Courier New", monospace;
+
+  /* Coins anguleux */
+  --radius-none: 0;
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --radius-full: 0;
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     VARIABLES HISTORIQUES GREEN-TERMINAL (composants maison conservés)
+     ───────────────────────────────────────────────────────────────────────── */
+  --color-bg-primary: #0a0a0a;
+  --color-bg-secondary: #0d1a0d;
+  --color-bg-tertiary: #121f12;
+  --color-bg-card: rgba(0, 30, 0, 0.6);
+  --color-error-bg: rgba(255, 0, 0, 0.1);
+
+  --color-green-dark: #003300;
+  --color-green-primary: #00ff00;
+  --color-green-light: #33ff33;
+  --color-green-glow: #00ff0080;
+  --color-green-dim: #00aa00;
+  --color-green-muted: #008800;
+
+  --color-text-muted: #008800;
+  --color-text-dim: #006600;
+
+  --color-border-hover: #00ff00;
+}

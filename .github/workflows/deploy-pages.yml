@@ -1,0 +1,61 @@
+name: Deploy Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Permissions requises par les actions officielles GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Un seul déploiement à la fois ; on ne purge pas un déploiement en cours
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build playground
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: yarn
+
+      - name: Active Corepack (Yarn 4)
+        run: corepack enable
+
+      - name: Installe les dépendances
+        run: yarn install --immutable
+
+      - name: Build du playground
+        # base = nom du dépôt pour des Pages de projet (fzed51.github.io/green-terminal/)
+        run: yarn build:playground --base=/green-terminal/
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload de l'artefact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: playground-dist
+
+  deploy:
+    name: Déploiement
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Déploie vers GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,127 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   GREEN TERMINAL — Couche 2 : cosmétique « hacker »
+   ---------------------------------------------------------------------------
+   Ce que le remap de tokens ne peut PAS faire : glow néon, uppercase et
+   pseudo-éléments décoratifs (>, [ ], //). Ces règles ciblent les classes
+   et éléments de react-component → couplées à ses noms de classes (.btn…).
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Ambiance globale ──────────────────────────────────────────────────── */
+body {
+  text-shadow: 0 0 2px rgba(0, 255, 0, 0.25);
+}
+
+/* ── Titres : glow + préfixe terminal + curseur clignotant sur le h1 ─────── */
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-shadow:
+    0 0 10px rgba(0, 255, 0, 0.5),
+    0 0 20px rgba(0, 255, 0, 0.3);
+}
+
+h1::before {
+  content: "> ";
+  color: #008800;
+}
+
+h1::after {
+  content: "_";
+  color: #00ff00;
+  animation: gt-blink 1s step-end infinite;
+}
+
+@keyframes gt-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ── Liens : entourés de crochets ─────────────────────────────────────────── */
+a::before {
+  content: "[";
+  color: #008800;
+  margin-right: 0.15rem;
+}
+a::after {
+  content: "]";
+  color: #008800;
+  margin-left: 0.15rem;
+}
+a:hover {
+  text-shadow: 0 0 8px rgba(0, 255, 0, 0.6);
+}
+
+/* ── Labels : préfixe commentaire ─────────────────────────────────────────── */
+label::before {
+  content: "// ";
+  color: #006600;
+}
+
+/* ── Boutons : uppercase, chevron, glow au hover/focus ───────────────────── */
+.btn {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.btn::before {
+  content: ">";
+  margin-right: 0.4em;
+  color: #008800;
+  transition: color var(--transition-fast);
+}
+
+.btn:hover:not(:disabled) {
+  box-shadow:
+    0 0 10px rgba(0, 255, 0, 0.35),
+    inset 0 0 20px rgba(0, 255, 0, 0.05);
+  text-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
+}
+.btn:hover:not(:disabled)::before {
+  color: #00ff00;
+}
+
+.btn:focus-visible {
+  box-shadow: 0 0 0 2px rgba(0, 255, 0, 0.5);
+}
+
+.btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+/* Variante danger : chevron « ! » rouge */
+.btn--danger::before {
+  content: "!";
+  color: #ff3333;
+}
+.btn--danger:hover:not(:disabled) {
+  box-shadow:
+    0 0 10px rgba(255, 51, 51, 0.4),
+    inset 0 0 20px rgba(255, 51, 51, 0.05);
+  text-shadow: 0 0 8px rgba(255, 51, 51, 0.6);
+}
+
+/* ── Champs : glow vert au focus ──────────────────────────────────────────── */
+input:focus,
+textarea:focus,
+select:focus {
+  box-shadow:
+    0 0 10px rgba(0, 255, 0, 0.3),
+    inset 0 0 20px rgba(0, 255, 0, 0.03);
+}
+
+/* ── Cartes : liseré qui s'illumine ───────────────────────────────────────── */
+.card {
+  box-shadow: inset 0 0 0 1px rgba(0, 255, 0, 0.08);
+}
+
+/* ── Code inline : ton terminal ───────────────────────────────────────────── */
+code,
+kbd,
+samp {
+  color: #33ff33;
+  background: rgba(0, 255, 0, 0.06);
+  border: 1px solid var(--color-border);
+}

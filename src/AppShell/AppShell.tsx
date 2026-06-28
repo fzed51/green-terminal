@@ -1,5 +1,3 @@
-import "../reset.css";
-import "../base.css";
 import "./AppShell.css";
 
 interface AppShellProps {
