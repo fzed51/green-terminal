@@ -24,4 +24,5 @@ export { ButtonGroup } from "./ButtonGroup";
 export { EmptyState } from "./EmptyState";
 export { PageHeader } from "./PageHeader";
 export { ProgressBar } from "./ProgressBar";
+export { Spinner } from "./Spinner";
 export { Terminal, TerminalLine } from "./Terminal";

@@ -1,0 +1,29 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   SPINNER — Indicateur de chargement ASCII animé
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.spinner {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-family: var(--font-family-base);
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+
+.spinner__frame {
+  display: inline-block;
+  min-width: 1ch;
+  text-align: center;
+  color: var(--color-green-primary);
+  text-shadow: 0 0 6px var(--color-green-glow);
+  white-space: pre;
+  font-variant-numeric: tabular-nums;
+}
+
+.spinner__label {
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+}

@@ -10,6 +10,7 @@ import {
   PageHeader,
   Paper,
   ProgressBar,
+  Spinner,
   SubText,
   Terminal,
   TerminalLine,
@@ -30,6 +31,7 @@ const sections: { id: string; label: string }[] = [
   { id: "boutons", label: "button group" },
   { id: "vide", label: "état vide" },
   { id: "progression", label: "progression" },
+  { id: "spinner", label: "spinner" },
   { id: "react-component", label: "react-component" },
   { id: "tokens", label: "design tokens" },
 ];
@@ -197,6 +199,36 @@ export function Showcase() {
                 <ProgressBar variant="ascii" value={45} cells={32} />
                 <ProgressBar label="Compilation" indeterminate />
                 <ProgressBar variant="ascii" label="Handshake" indeterminate />
+              </div>
+            </Demo>
+          </Section>
+
+          <Section id="spinner" title="Spinner">
+            <Demo
+              code={`<Spinner label="Connexion au serveur" />
+<Spinner variant="line" label="Compilation" />
+<Spinner variant="dots" label="Attente réponse" />
+<Spinner variant="arrow" label="Synchronisation" />
+<Spinner variant="bar" label="Écriture disque" />
+
+{/* speed : durée par frame (ms) */}
+<Spinner variant="line" speed={250} label="Lent (250 ms/frame)" />
+<Spinner variant="line" speed={60} label="Rapide (60 ms/frame)" />
+
+{/* cycle : durée d'un tour complet (ms), répartie sur les frames */}
+<Spinner variant="braille" cycle={2000} label="Cycle 2 s" />
+<Spinner variant="arrow" cycle={800} label="Cycle 0,8 s" />`}
+            >
+              <div className="d-flex flex-col gap-3">
+                <Spinner label="Connexion au serveur" />
+                <Spinner variant="line" label="Compilation" />
+                <Spinner variant="dots" label="Attente réponse" />
+                <Spinner variant="arrow" label="Synchronisation" />
+                <Spinner variant="bar" label="Écriture disque" />
+                <Spinner variant="line" speed={250} label="Lent (250 ms/frame)" />
+                <Spinner variant="line" speed={60} label="Rapide (60 ms/frame)" />
+                <Spinner variant="braille" cycle={2000} label="Cycle 2 s" />
+                <Spinner variant="arrow" cycle={800} label="Cycle 0,8 s" />
               </div>
             </Demo>
           </Section>

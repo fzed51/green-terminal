@@ -10,7 +10,7 @@ Concrètement, GreenTerminal :
 
 - **re-skinne** les composants de `react-component` (Button, Card, Table…) via une couche de design tokens + une couche cosmétique (glow néon, préfixes `>` `[ ]` `//`, police monospace, coins anguleux) ;
 - **ré-exporte** ces composants re-stylés sous la nomenclature GreenTerminal ;
-- **ajoute** ses propres composants signatures absents de `react-component` (`Terminal`, `AppShell`, `Alert`, `ButtonGroup`, `EmptyState`, `PageHeader`).
+- **ajoute** ses propres composants signatures absents de `react-component` (`Terminal`, `AppShell`, `Alert`, `ButtonGroup`, `EmptyState`, `PageHeader`, `ProgressBar`, `Spinner`).
 
 ---
 
@@ -83,11 +83,33 @@ export function App() {
 | `ButtonGroup`             | Regroupe des boutons (horizontal ou `vertical`).   |
 | `EmptyState`              | État vide (icône, titre, description, action).     |
 | `PageHeader`              | En-tête de page (titre + sous-titre).              |
+| `ProgressBar`             | Barre de progression (CSS pleine ou jauge ASCII).  |
+| `Spinner`                 | Indicateur de chargement ASCII animé.              |
 
 > ⚠️ **Changements d'API par rapport aux versions ≤ 0.1.0** (composants désormais issus de `react-component`) :
 > - `Table` n'utilise plus la composition `TableBody`/`TableCell`/`TableHead`/`TableRow` mais l'API data-driven `columns` / `data`.
 > - `Button` change de jeu de variantes (`primary`, `secondary`, `outline`, `ghost`, `danger`) et gagne `size` / `loading` / `fullWidth`.
 > - `Input`, `Select`, `Separator`, `Textarea` adoptent les props de `react-component`.
+
+### Props — `Spinner`
+
+| Prop        | Type                                                   | Défaut       | Description                                                        |
+| ----------- | ------------------------------------------------------ | ------------ | ----------------------------------------------------------------- |
+| `variant`   | `"braille"` \| `"line"` \| `"dots"` \| `"arrow"` \| `"bar"` | `"braille"`  | Jeu de caractères animés.                                         |
+| `label`     | `string`                                               | —            | Libellé affiché à droite du spinner.                              |
+| `speed`     | `number`                                               | `80`         | Durée d'une frame (ms). Ignoré si `cycle` est défini.             |
+| `cycle`     | `number`                                               | —            | Durée d'un cycle complet (ms), répartie sur toutes les frames. Prioritaire sur `speed`. |
+| `className` | `string`                                               | —            | Classe CSS additionnelle.                                         |
+| `style`     | `React.CSSProperties`                                  | —            | Styles inline.                                                    |
+
+> Si `cycle` **et** `speed` sont fournis, `speed` est ignoré et un `console.warn` est émis.
+> L'animation respecte `prefers-reduced-motion: reduce` (spinner figé sur la première frame).
+
+```tsx
+<Spinner label="Connexion au serveur" />
+<Spinner variant="line" speed={120} label="Compilation" />
+<Spinner variant="braille" cycle={1000} label="Scan" />  {/* 1 tour = 1 s */}
+```
 
 ---
 
