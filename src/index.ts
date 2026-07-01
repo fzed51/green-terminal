@@ -23,4 +23,5 @@ export { BaseStyle } from "./BaseStyle";
 export { ButtonGroup } from "./ButtonGroup";
 export { EmptyState } from "./EmptyState";
 export { PageHeader } from "./PageHeader";
+export { ProgressBar } from "./ProgressBar";
 export { Terminal, TerminalLine } from "./Terminal";

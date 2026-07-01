@@ -9,6 +9,7 @@ import {
   EmptyState,
   PageHeader,
   Paper,
+  ProgressBar,
   SubText,
   Terminal,
   TerminalLine,
@@ -28,6 +29,7 @@ const sections: { id: string; label: string }[] = [
   { id: "header", label: "page header" },
   { id: "boutons", label: "button group" },
   { id: "vide", label: "état vide" },
+  { id: "progression", label: "progression" },
   { id: "react-component", label: "react-component" },
   { id: "tokens", label: "design tokens" },
 ];
@@ -178,6 +180,24 @@ export function Showcase() {
                 description="Aucune entrée pour la période sélectionnée."
                 action={<Button variant="outline">Rafraîchir</Button>}
               />
+            </Demo>
+          </Section>
+
+          <Section id="progression" title="Progression">
+            <Demo
+              code={`<ProgressBar label="Téléchargement" value={72} showValue />
+<ProgressBar variant="ascii" label="Scan disque" value={45} showValue />
+<ProgressBar variant="ascii" value={45} cells={32} />
+<ProgressBar label="Compilation" indeterminate />
+<ProgressBar variant="ascii" label="Handshake" indeterminate />`}
+            >
+              <div className="d-flex flex-col gap-4">
+                <ProgressBar label="Téléchargement" value={72} showValue />
+                <ProgressBar variant="ascii" label="Scan disque" value={45} showValue />
+                <ProgressBar variant="ascii" value={45} cells={32} />
+                <ProgressBar label="Compilation" indeterminate />
+                <ProgressBar variant="ascii" label="Handshake" indeterminate />
+              </div>
             </Demo>
           </Section>
 

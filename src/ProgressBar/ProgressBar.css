@@ -1,0 +1,122 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   PROGRESS BAR — Barre de progression (CSS pleine ou jauge ASCII)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.progress-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-family: var(--font-family-base);
+}
+
+.progress-bar__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  font-size: 0.85rem;
+}
+
+.progress-bar__label {
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.progress-bar__value {
+  color: var(--color-green-light);
+  text-shadow: 0 0 6px var(--color-green-glow);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Variante « bar » : remplissage CSS ──────────────────────────────────── */
+
+.progress-bar__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.progress-bar__bracket {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  color: var(--color-green-dim);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.progress-bar__track {
+  position: relative;
+  flex: 1;
+  height: 0.75rem;
+  background: var(--color-bg-dark);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.progress-bar__fill {
+  height: 100%;
+  background: var(--color-green-primary);
+  box-shadow: 0 0 8px var(--color-green-glow);
+  transition: width 0.3s ease;
+}
+
+.progress-bar--indeterminate .progress-bar__fill {
+  width: 40%;
+  animation: gt-progress-slide 1.4s ease-in-out infinite;
+}
+
+@keyframes gt-progress-slide {
+  0% {
+    transform: translateX(-110%);
+  }
+  100% {
+    transform: translateX(310%);
+  }
+}
+
+/* ── Variante « ascii » : jauge en caractères ────────────────────────────── */
+
+.progress-bar__ascii {
+  position: relative;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  color: var(--color-text-muted);
+}
+
+.progress-bar__ascii-filled {
+  color: var(--color-green-primary);
+  text-shadow: 0 0 6px var(--color-green-glow);
+}
+
+.progress-bar__ascii-empty {
+  color: var(--color-text-dim);
+}
+
+.progress-bar__ascii-scan {
+  position: absolute;
+  top: 0;
+  left: 1ch;
+  color: var(--color-green-primary);
+  text-shadow: 0 0 6px var(--color-green-glow);
+  animation: gt-progress-scan 1.6s ease-in-out infinite alternate;
+}
+
+@keyframes gt-progress-scan {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(var(--gt-scan-max, 0));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-bar--indeterminate .progress-bar__fill,
+  .progress-bar__ascii-scan {
+    animation-duration: 0s;
+  }
+}
