@@ -112,6 +112,35 @@ select:focus {
     inset 0 0 20px rgba(0, 255, 0, 0.03);
 }
 
+/* ── Interrupteurs : puce visible dans les deux états ─────────────────────────
+   Sans override, la puce (--color-bg-surface) et la piste éteinte
+   (--color-bg-muted) sont deux tons de noir quasi identiques → puce invisible
+   quand le switch est à false. On rend la puce verte et lumineuse à l'arrêt,
+   sombre quand la piste passe au vert (marche). */
+.checkbox--switch .checkbox__visual::after {
+  background-color: var(--color-green-dim);
+  box-shadow: 0 0 6px var(--color-green-glow);
+}
+
+/* La puce éteinte adopte la couleur d'état (sinon puce verte dans un switch
+   rouge/vert de validation). */
+.checkbox--switch.checkbox--error .checkbox__visual::after {
+  background-color: var(--color-error);
+  box-shadow: 0 0 6px var(--color-error);
+}
+
+.checkbox--switch.checkbox--success .checkbox__visual::after {
+  background-color: var(--color-success);
+  box-shadow: 0 0 6px var(--color-green-glow);
+}
+
+/* Marche (coché) : piste colorée, puce sombre pour le contraste — vaut pour
+   toutes les variantes (défaut, error, success) via une spécificité plus forte. */
+.checkbox--switch .checkbox__input:checked + .checkbox__visual::after {
+  background-color: var(--color-bg-dark);
+  box-shadow: none;
+}
+
 /* ── Cartes : liseré qui s'illumine ───────────────────────────────────────── */
 .card {
   box-shadow: inset 0 0 0 1px rgba(0, 255, 0, 0.08);
